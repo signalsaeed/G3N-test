@@ -18,7 +18,7 @@ import (
 	"github.com/g3n/engine/util/helper"
 	"github.com/g3n/engine/window"
 )
-
+//running function to be exported for main thread
 func RunFunction() {
 	var renderList []*geometry.Geometry
 	decoder, _ := obj.Decode("../files/IfcDoors.obj", "../files/IfcDoors.mtl")
