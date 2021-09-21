@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - name: 'Install g3n dependencies'
       run: sudo apt-get update && sudo apt-get install xorg-dev libgl1-mesa-dev libopenal1 libopenal-dev libvorbis0a libvorbis-dev libvorbisfile3
@@ -22,6 +22,8 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+      
+    - name: Go-linter
+      uses: Jerome1337/golint-action@v1.0.2
+      with:
+        golint-path: ./...
